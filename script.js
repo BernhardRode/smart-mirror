@@ -21,12 +21,15 @@ function showTime() {
 
 async function recognizeFaces() {
   const video = document.getElementById("video");
-
+  const path =
+    window.location.href == "localhost:8080"
+      ? "/models"
+      : "/smart-mirror/models";
   Promise.all([
-    faceapi.nets.tinyFaceDetector.loadFromUri("./models"),
-    faceapi.nets.faceLandmark68Net.loadFromUri("./models"),
-    faceapi.nets.faceRecognitionNet.loadFromUri("./models"),
-    faceapi.nets.faceExpressionNet.loadFromUri("./models"),
+    faceapi.nets.tinyFaceDetector.loadFromUri("/smart-mirror/models"),
+    faceapi.nets.faceLandmark68Net.loadFromUri("/smart-mirror/models"),
+    faceapi.nets.faceRecognitionNet.loadFromUri("/smart-mirror/models"),
+    faceapi.nets.faceExpressionNet.loadFromUri("/smart-mirror/models"),
   ]).then(startVideo);
 
   function startVideo() {
