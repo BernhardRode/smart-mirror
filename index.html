@@ -30,24 +30,40 @@
             align-items: centre;
         }
 
-
         .clock {
             position: absolute;
             top: 0;
             left: 0;
             right: 0;
-            text-align: center;
+            text-align: right;
             width: 100%;
             color: #FFFFFF;
             font-size: 60px;
             letter-spacing: 7px;
+            
+            background: -webkit-gradient(linear,left top,left bottom,from(#ffffff),to(#5c5c5c));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
-    </style>
+
+        .date {
+            position: absolute;
+            top: 70px;
+            left: 0;
+            right: 0;
+            text-align: right;
+            width: 100%;
+            color: #5c5c5c;
+            font-size: 15px;
+            letter-spacing: 7px;
+        }
+    </style>d
 
 </head>
 
 <body>
     <div id="MyClockDisplay" class="clock" onload="showTime()"></div>
+    <div id="MyDateDisplay" class="date" onload="showDate()"></div>
 </body>
 
 </html>

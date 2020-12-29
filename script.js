@@ -19,6 +19,34 @@ function showTime() {
   setTimeout(showTime, 1000);
 }
 
+function showDate() {
+  const weekdays = [
+    "Sonntag",
+    "Montag",
+    "Dienstag",
+    "Mittwoch",
+    "Donnerstag",
+    "Freitag",
+    "Samstag"
+  ]
+  var date = new Date();
+
+  var year = date.getFullYear(); // 0 - 59
+  var month = date.getMonth(); // 0 - 11
+  var day = date.getDate(); // 0 - 59
+  var weekday = date.getDay(); // 0 - 59
+
+  month = month < 10 ? "0" + month : month;
+  day = day < 10 ? "0" + day : day;
+
+  var time = weekdays[weekday] + ", " + day + "." + month + "." + year;
+  document.getElementById("MyDateDisplay").innerText = time;
+  document.getElementById("MyDateDisplay").textContent = time;
+
+  setTimeout(showDate, 1000);
+}
+
 document.addEventListener("DOMContentLoaded", function (event) {
   showTime();
+  showDate();
 });
