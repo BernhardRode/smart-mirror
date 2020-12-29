@@ -15,8 +15,6 @@ function showTime() {
   var time = h + ":" + m + ":" + s;
   document.getElementById("MyClockDisplay").innerText = time;
   document.getElementById("MyClockDisplay").textContent = time;
-
-  setTimeout(showTime, 1000);
 }
 
 function showDate() {
@@ -42,11 +40,33 @@ function showDate() {
   var time = weekdays[weekday] + ", " + day + "." + month + "." + year;
   document.getElementById("MyDateDisplay").innerText = time;
   document.getElementById("MyDateDisplay").textContent = time;
-
-  setTimeout(showDate, 1000);
 }
 
-document.addEventListener("DOMContentLoaded", function (event) {
+function showGreeting() {
+  var date = new Date();
+
+  var h = date.getHours(); // 0 - 23
+
+  let greeting = 'Guten Morgen'
+  if (h >= 11) {
+    greeting = 'Guten Mittag'
+  }
+  if (h >= 17) {
+    greeting = 'Guten Abend'
+  }
+
+  document.getElementById("MyGreetingDisplay").innerText = greeting;
+  document.getElementById("MyGreetingDisplay").textContent = greeting;
+}
+
+
+function render() {
   showTime();
   showDate();
+  showGreeting();
+}
+
+
+document.addEventListener("DOMContentLoaded", function (event) {
+  setInterval(render, 1000)
 });
