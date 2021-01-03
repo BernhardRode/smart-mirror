@@ -30,8 +30,8 @@ function showDate() {
   var date = new Date();
 
   var year = date.getFullYear(); // 0 - 59
-  var month = date.getMonth(); // 0 - 11
-  var day = date.getDate(); // 0 - 59
+  var month = date.getMonth() + 1; // 0 - 11
+  var day = date.getDate() + 1; // 0 - 59
   var weekday = date.getDay(); // 0 - 59
 
   month = month < 10 ? "0" + month : month;
