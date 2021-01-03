@@ -81,7 +81,7 @@
   "prevent_uploads": false,
   "redirect_custom_error_page": false,
   "reload_network_change": false,
-  "reload_on_screen_on": false,
+  "reload_on_screen_on": true,
   "require_password": true,
   "reset_wifi": false,
   "reset_wifi_interval": 0,
